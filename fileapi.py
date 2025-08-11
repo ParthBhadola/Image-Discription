@@ -6,7 +6,7 @@ import io
 import base64
 from PIL import Image
 # Configure your Gemini API key
-genai.configure(api_key="AIzaSyBUFxl1FLDGQetRqyWNvkeTK4wjJ8Ny2_k")  
+genai.configure(api_key="")  
 # Initialize the Gemini chat model
 model_name = "gemini-2.5-flash-preview-05-20"
 chat_session = genai.GenerativeModel(model_name).start_chat()
@@ -29,3 +29,4 @@ async def describe_image(file: UploadFile = File(...)):
             time.sleep(46)  
             return {"error": "Quota exceeded. Please try again later."}
         raise HTTPException(status_code=500, detail=str(e))
+
